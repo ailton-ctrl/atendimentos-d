@@ -1,1 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lar Internet · Fibra ótica em Curitiba</title>
+    <!-- Bootstrap 5 + ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (biblioteca oficial de ícones) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts (opcional, para um toque mais moderno) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+        }
+        /* paleta personalizada: tons de azul (conexão, confiança) + detalhes em laranja suave */
+        :root {
+            --primary: #0d6efd;       /* Bootstrap primary */
+            --secondary: #022b57;      /* tom escuro para contraste */
+            --accent: #fd7e14;         /* laranja (chamada, detalhes) */
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .bg-dark-blue {
+            background-color: var(--secondary) !important;
+        }
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+        }
+        .btn-accent:hover {
+            background-color: #e66a0b;
+            color: #fff;
+        }
+        .icon-circle {
+            background-color: rgba(13, 110, 253, 0.1);
+            color: var(--primary);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .card-plan:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            border-color: var(--primary) !important;
+        }
+        footer a {
+            color: #ced4da;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: white;
+        }
+        .contact-info i {
+            width: 28px;
+            color: var(--primary);
+        }
+        .border-accent-bottom {
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
 
+<!-- ======= NAVBAR ======= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue py-3 shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#">
+            <i class="bi bi-wifi"></i> Lar Internet
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ======= HERO / HOME ======= -->
+<section id="home" class="py-5 bg-light">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="badge bg-primary bg-opacity-10 text-primary py-2 px-3 mb-4 rounded-pill">
+                    <i class="bi bi-stars"></i> 100% fibra ótica em Curitiba
+                </span>
+                <h1 class="display-4 fw-bold mb-3">Conecte sua casa com a <span class="text-primary">Lar Internet</span></h1>
+                <p class="lead text-secondary">Internet de alta velocidade, estabilidade e suporte humanizado. Há mais de 10 anos levando o melhor sinal para o Campo de Santana e toda Curitiba.</p>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="#planos" class="btn btn-primary btn-lg px-4 py-3"><i class="bi bi-tags"></i> Ver planos</a>
+                    <a href="#contato" class="btn btn-outline-secondary btn-lg px-4 py-3"><i class="bi bi-whatsapp"></i> (41) 3223-9308</a>
+                </div>
+                <!-- mini confiabilidade -->
+                <div class="row mt-5 g-3 text-muted">
+                    <div class="col-6"><i class="bi bi-shield-check text-primary"></i> 99.9% uptime</div>
+                    <div class="col-6"><i class="bi bi-trophy text-primary"></i> +1.200 clientes</div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <!-- imagem ilustrativa (usamos um ícone gigante de roteador/fibra) -->
+                <i class="bi bi-router-fill text-primary" style="font-size: 15rem; opacity: 0.9;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= DIFERENCIAIS (ícones + frases) ======= -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Por que escolher a <span class="text-primary">Lar Internet</span>?</h2>
+            <p class="text-secondary">Conectividade de verdade, com suporte que entende você</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <h5>Velocidade real</h5>
+                <p class="text-secondary">Fibra ótica simétrica, sem queda de desempenho nos horários de pico.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-headset"></i>
+                </div>
+                <h5>Suporte ágil</h5>
+                <p class="text-secondary">Atendimento rápido via WhatsApp ou telefone. Técnicos preparados.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-wifi"></i>
+                </div>
+                <h5>Wi-Fi de qualidade</h5>
+                <p class="text-secondary">Roteadores modernos para você aproveitar toda a banda contratada.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= PLANOS (cards com preços fictícios mas coerentes) ======= -->
+<section id="planos" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="text-primary fw-semibold">ESCOLHA O SEU</span>
+            <h2 class="fw-bold">Planos de internet sob medida</h2>
+            <p class="text-secondary">Opções para todos os perfis, sempre com fibra até a sua casa.</p>
+        </div>
+        <div class="row g-4">
+            <!-- plano 1 -->
+            <div class="col-lg-4">
+                <div class="card card-plan h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="bi bi-wifi fs-1 text-primary"></i>
+                        <h4 class="fw-bold mt-3">Lar 200 Mega</h4>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Download 200 Mbps</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Upload 200 Mbps</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Wi-Fi incluso</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Suporte 24h</p>
+                        <h3 class="fw-bold mt-4">R$ 89,90 <span class="fs-6 fw-normal text-secondary">/mês</span></h3>
+                        <a href="#contato" class="btn btn-outline-primary w-100 mt-3">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- plano 2 (destaque) -->
+            <div class="col-lg-4">
+                <div class="card card-plan h-100 border-primary border-2 shadow">
+                    <div class="card-body p-4">
+                        <span class="badge bg-accent text-white mb-2" style="background-color: #fd7e14;">MAIS ESCOLHIDO</span>
+                        <i class="bi bi-wifi fs-1 text-primary"></i>
+                        <h4 class="fw-bold mt-3">Lar 400 Mega</h4>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Download 400 Mbps</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Upload 400 Mbps</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Wi-Fi 6 + Roteador</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Suporte prioritário</p>
+                        <h3 class="fw-bold mt-4">R$ 129,90 <span class="fs-6 fw-normal text-secondary">/mês</span></h3>
+                        <a href="#contato" class="btn btn-primary w-100 mt-3">Quero esse</a>
+                    </div>
+                </div>
+            </div>
+            <!-- plano 3 -->
+            <div class="col-lg-4">
+                <div class="card card-plan h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="bi bi-wifi fs-1 text-primary"></i>
+                        <h4 class="fw-bold mt-3">Lar 600 Mega</h4>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Download 600 Mbps</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Upload 600 Mbps</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Wi-Fi 6 + mesh</p>
+                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Instalação grátis</p>
+                        <h3 class="fw-bold mt-4">R$ 169,90 <span class="fs-6 fw-normal text-secondary">/mês</span></h3>
+                        <a href="#contato" class="btn btn-outline-primary w-100 mt-3">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-secondary mt-5"><i class="bi bi-info-circle"></i> Todos os planos com instalação sem fidelidade. Sujeito a análise de viabilidade.</p>
+    </div>
+</section>
+
+<!-- ======= SOBRE (com os dados da empresa, CNPJ etc) ======= -->
+<section id="sobre" class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-4"><span class="border-accent-bottom">Sobre a Lar Internet</span></h2>
+                <p class="lead">Conectando famílias curitibanas desde 2011 com transparência e qualidade.</p>
+                <div class="contact-info mt-4">
+                    <p><i class="bi bi-building"></i> <strong>Razão Social:</strong> Lar Telecomunicacoes LTDA</p>
+                    <p><i class="bi bi-tag"></i> <strong>Nome Fantasia:</strong> Lar Internet</p>
+                    <p><i class="bi bi-qr-code-scan"></i> <strong>CNPJ:</strong> 13.363.506/0001-07</p>
+                    <p><i class="bi bi-calendar-check"></i> <strong>Data de abertura:</strong> 03/03/2011</p>
+                    <p><i class="bi bi-geo-alt"></i> <strong>Endereço:</strong> Rua Marcos Bertoldi, 443 - Campo de Santana, Curitiba - PR, 81490-530</p>
+                    <p><i class="bi bi-telephone"></i> <strong>Telefone fixo:</strong> (41) 3223-9308</p>
+                    <p><i class="bi bi-envelope"></i> <strong>E-mail:</strong> contato@larinternet.com.br</p>
+                </div>
+                <!-- badges de confiança -->
+                <div class="mt-3">
+                    <span class="badge bg-light text-dark p-2 me-2"><i class="bi bi-check-circle-fill text-success"></i> Situação cadastral ativa</span>
+                    <span class="badge bg-light text-dark p-2"><i class="bi bi-shield-fill-check text-primary"></i> 12 anos de mercado</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- mapa / endereço ilustrado com card -->
+                <div class="card border-0 shadow-sm bg-dark-blue text-white">
+                    <div class="card-body p-4">
+                        <h5><i class="bi bi-pin-map-fill"></i> Área de cobertura</h5>
+                        <p>Atendemos todo o bairro Campo de Santana e regiões vizinhas de Curitiba. Consulte viabilidade.</p>
+                        <hr class="bg-white opacity-25">
+                        <p class="mb-0"><i class="bi bi-telephone-outbound"></i> Ligue agora: <strong>(41) 3223-9308</strong></p>
+                    </div>
+                </div>
+                <!-- ícone de rota (apenas estético) -->
+                <div class="text-center mt-4">
+                    <i class="bi bi-houses-fill text-primary" style="font-size: 4rem; opacity: 0.6;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= CONTATO / INFORMAÇÕES ADICIONAIS ======= -->
+<section id="contato" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto text-center">
+                <h2 class="fw-bold">Fale com a gente</h2>
+                <p class="text-secondary">Tire dúvidas, solicite orçamento ou suporte técnico.</p>
+            </div>
+        </div>
+        <div class="row g-4 mt-3">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <i class="bi bi-whatsapp fs-1 text-primary"></i>
+                    <h5 class="mt-2">WhatsApp</h5>
+                    <p class="text-secondary">(41) 3223-9308</p>
+                    <a href="#" class="stretched-link" onclick="alert('Número para contato: (41) 3223-9308')">Enviar mensagem</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <i class="bi bi-telephone fs-1 text-primary"></i>
+                    <h5 class="mt-2">Telefone Fixo</h5>
+                    <p class="text-secondary">(41) 3223-9308</p>
+                    <p class="text-muted small">Seg a sex, 8h às 18h</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <i class="bi bi-envelope fs-1 text-primary"></i>
+                    <h5 class="mt-2">E-mail</h5>
+                    <p class="text-secondary">contato@larinternet.com.br</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- mais informações CNPJ rápido (consulta) -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="bg-white p-4 rounded-3 border">
+                    <p class="mb-2"><i class="bi bi-database"></i> <strong>Dados cadastrais:</strong> LAR TELECOMUNICACOES LTDA | CNPJ 13.363.506/0001-07 | Situação: ATIVA (desde 03/03/2011)</p>
+                    <p class="mb-0 text-secondary small">* Endereço comercial: Rua Marcos Bertoldi, 443 - Campo de Santana, Curitiba. CEP 81490-530</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= RODAPÉ ======= -->
+<footer class="bg-dark-blue text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h4 class="fw-bold"><i class="bi bi-wifi"></i> Lar Internet</h4>
+                <p class="text-secondary">Fibra ótica com o carinho que você merece. Conectamos o Campo de Santana e região com qualidade e respeito.</p>
+                <i class="bi bi-facebook me-3 fs-5"></i>
+                <i class="bi bi-instagram me-3 fs-5"></i>
+                <i class="bi bi-whatsapp fs-5"></i>
+            </div>
+            <div class="col-md-3 offset-md-1">
+                <h5>Links rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home" class="text-secondary">Início</a></li>
+                    <li><a href="#planos" class="text-secondary">Planos</a></li>
+                    <li><a href="#sobre" class="text-secondary">Sobre</a></li>
+                    <li><a href="#contato" class="text-secondary">Contato</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Atendimento</h5>
+                <p class="text-secondary mb-1"><i class="bi bi-telephone"></i> (41) 3223-9308</p>
+                <p class="text-secondary"><i class="bi bi-envelope"></i> contato@larinternet.com.br</p>
+                <small>® 2025 Lar Telecomunicacoes LTDA. Todos os direitos reservados.</small>
+            </div>
+        </div>
+        <hr class="bg-secondary">
+        <div class="row">
+            <div class="col-12 text-center text-secondary">
+                <p class="small">Rua Marcos Bertoldi, 443 - Campo de Santana, Curitiba - PR - CEP 81490-530 | CNPJ 13.363.506/0001-07</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS (necessário para o menu colapsável e interações) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- (opcional) script para suavizar scroll em links internos -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
