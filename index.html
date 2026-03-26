@@ -1,123 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    iframe {
-      border: 0;
-      width: 100vw;
-      height: 100vh;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <iframe
-    src="https://cx.nv-experience-api.com"
-    allow="fullscreen"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</body>
-</html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lar Internet · Fibra ótica em Curitiba</title>
+    <title>Gerenciador Financeiro CAIXA · Controle seu dinheiro</title>
     <!-- Bootstrap 5 + ícones -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (biblioteca oficial de ícones) -->
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts (opcional, para um toque mais moderno) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
         }
         body {
-            background-color: #f8fafc;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
         }
-        /* paleta personalizada: tons de azul (conexão, confiança) + detalhes em laranja suave */
         :root {
-            --primary: #0d6efd;       /* Bootstrap primary */
-            --secondary: #022b57;      /* tom escuro para contraste */
-            --accent: #fd7e14;         /* laranja (chamada, detalhes) */
+            --primary: #2e7d32;      /* verde caixa */
+            --primary-dark: #1b5e20;
+            --secondary: #ffb74d;    /* laranja suave */
+            --accent: #f9a825;
+            --gold: #ffd966;
         }
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        .bg-primary-custom {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
         }
-        .bg-dark-blue {
-            background-color: var(--secondary) !important;
-        }
-        .btn-accent {
-            background-color: var(--accent);
+        .btn-caixa {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
             color: white;
             border: none;
+            transition: transform 0.2s;
         }
-        .btn-accent:hover {
-            background-color: #e66a0b;
-            color: #fff;
+        .btn-caixa:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #1b5e20 0%, #0f3d12 100%);
+            color: white;
+        }
+        .btn-outline-caixa {
+            border: 2px solid #2e7d32;
+            color: #2e7d32;
+            background: transparent;
+        }
+        .btn-outline-caixa:hover {
+            background: #2e7d32;
+            color: white;
         }
         .icon-circle {
-            background-color: rgba(13, 110, 253, 0.1);
-            color: var(--primary);
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
+            background: rgba(46, 125, 50, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            transition: all 0.3s;
+        }
+        .icon-circle i {
+            font-size: 2.5rem;
+            color: #2e7d32;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .border-bottom-gold {
+            border-bottom: 4px solid #ffb74d;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .feature-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .feature-box:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .bg-soft-green {
+            background: linear-gradient(120deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+        .price-badge {
+            background: #ffb74d;
+            color: #1b5e20;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        footer {
+            background: #1a3a1f;
+            color: white;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            transition: all 0.3s;
         }
-        .card-plan:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.02);
-            transition: all 0.2s ease;
-            border-color: var(--primary) !important;
+        .social-icon:hover {
+            background: #ffb74d;
+            transform: translateY(-3px);
         }
-        footer a {
-            color: #ced4da;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: white;
-        }
-        .contact-info i {
-            width: 28px;
-            color: var(--primary);
-        }
-        .border-accent-bottom {
-            border-bottom: 4px solid var(--accent);
-            padding-bottom: 0.5rem;
-            display: inline-block;
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
     </style>
 </head>
 <body>
 
 <!-- ======= NAVBAR ======= -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue py-3 shadow">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom py-3 shadow-lg sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold fs-3" href="#">
-            <i class="bi bi-wifi"></i> Lar Internet
+            <i class="bi bi-cash-stack me-2"></i>Gerenciador Financeiro CAIXA
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="#solucoes">Soluções</a></li>
                 <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             </ul>
@@ -125,209 +151,323 @@
     </div>
 </nav>
 
-<!-- ======= HERO / HOME ======= -->
-<section id="home" class="py-5 bg-light">
-    <div class="container py-4">
+<!-- ======= HERO SECTION ======= -->
+<section id="home" class="py-5 position-relative" style="background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);">
+    <div class="container py-5">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <span class="badge bg-primary bg-opacity-10 text-primary py-2 px-3 mb-4 rounded-pill">
-                    <i class="bi bi-stars"></i> 100% fibra ótica em Curitiba
-                </span>
-                <h1 class="display-4 fw-bold mb-3">Conecte sua casa com a <span class="text-primary">Lar Internet</span></h1>
-                <p class="lead text-secondary">Internet de alta velocidade, estabilidade e suporte humanizado. Há mais de 10 anos levando o melhor sinal para o Campo de Santana e toda Curitiba.</p>
-                <div class="d-flex gap-3 mt-4">
-                    <a href="#planos" class="btn btn-primary btn-lg px-4 py-3"><i class="bi bi-tags"></i> Ver planos</a>
-                    <a href="#contato" class="btn btn-outline-secondary btn-lg px-4 py-3"><i class="bi bi-whatsapp"></i> (41) 3223-9308</a>
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3">
+                        <i class="bi bi-trophy-fill"></i> Especialistas em Gestão Financeira
+                    </span>
                 </div>
-                <!-- mini confiabilidade -->
-                <div class="row mt-5 g-3 text-muted">
-                    <div class="col-6"><i class="bi bi-shield-check text-primary"></i> 99.9% uptime</div>
-                    <div class="col-6"><i class="bi bi-trophy text-primary"></i> +1.200 clientes</div>
+                <h1 class="display-4 fw-bold mb-3">Controle seu <span class="text-success">dinheiro</span> com inteligência</h1>
+                <p class="lead text-secondary">Soluções completas para gerenciamento financeiro de empresas e pessoas físicas. Transparência, segurança e resultados.</p>
+                <div class="d-flex gap-3 mt-4 flex-wrap">
+                    <a href="#contato" class="btn btn-caixa btn-lg px-4"><i class="bi bi-whatsapp"></i> (64) 99989-6161</a>
+                    <a href="#servicos" class="btn btn-outline-caixa btn-lg px-4"><i class="bi bi-arrow-right-circle"></i> Conheça nossos serviços</a>
+                </div>
+                <div class="row mt-5 g-3">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                            <span>+500 clientes satisfeitos</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                            <span>5 anos de experiência</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 text-center">
-                <!-- imagem ilustrativa (usamos um ícone gigante de roteador/fibra) -->
-                <i class="bi bi-router-fill text-primary" style="font-size: 15rem; opacity: 0.9;"></i>
+                <div class="bg-soft-green rounded-5 p-5">
+                    <i class="bi bi-graph-up fs-1 text-success"></i>
+                    <i class="bi bi-calculator-fill" style="font-size: 8rem; color: #2e7d32;"></i>
+                    <p class="mt-3 fw-bold text-success">Gestão financeira simplificada</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ======= DIFERENCIAIS (ícones + frases) ======= -->
-<section class="py-5">
+<!-- ======= NÚMEROS / ESTATÍSTICAS ======= -->
+<section class="py-4">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-people-fill fs-1 text-success"></i>
+                    <h3 class="fw-bold mt-2">500+</h3>
+                    <p class="text-muted mb-0">Clientes atendidos</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-calendar-check-fill fs-1 text-success"></i>
+                    <h3 class="fw-bold mt-2">5</h3>
+                    <p class="text-muted mb-0">Anos de mercado</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-star-fill fs-1 text-success"></i>
+                    <h3 class="fw-bold mt-2">98%</h3>
+                    <p class="text-muted mb-0">Satisfação</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-shield-check fs-1 text-success"></i>
+                    <h3 class="fw-bold mt-2">24/7</h3>
+                    <p class="text-muted mb-0">Suporte especializado</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= SERVIÇOS (ícones e frases) ======= -->
+<section id="servicos" class="py-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Por que escolher a <span class="text-primary">Lar Internet</span>?</h2>
-            <p class="text-secondary">Conectividade de verdade, com suporte que entende você</p>
+            <span class="text-success fw-semibold">O QUE FAZEMOS</span>
+            <h2 class="fw-bold">Nossos <span class="border-bottom-gold">Serviços Financeiros</span></h2>
+            <p class="text-secondary">Soluções completas para organizar suas finanças</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4 text-center">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-lightning-charge-fill"></i>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="icon-circle mx-auto">
+                        <i class="bi bi-calculator-fill"></i>
+                    </div>
+                    <h5 class="fw-bold">Controle de Caixa</h5>
+                    <p class="text-secondary">Gestão completa de entradas e saídas, fluxo de caixa diário e relatórios detalhados.</p>
                 </div>
-                <h5>Velocidade real</h5>
-                <p class="text-secondary">Fibra ótica simétrica, sem queda de desempenho nos horários de pico.</p>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-headset"></i>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="icon-circle mx-auto">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h5 class="fw-bold">Planejamento Financeiro</h5>
+                    <p class="text-secondary">Metas e objetivos financeiros personalizados para sua empresa ou negócio.</p>
                 </div>
-                <h5>Suporte ágil</h5>
-                <p class="text-secondary">Atendimento rápido via WhatsApp ou telefone. Técnicos preparados.</p>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-wifi"></i>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="icon-circle mx-auto">
+                        <i class="bi bi-credit-card"></i>
+                    </div>
+                    <h5 class="fw-bold">Controle de Contas</h5>
+                    <p class="text-secondary">Organização de contas a pagar e receber, evitando juros e multas.</p>
                 </div>
-                <h5>Wi-Fi de qualidade</h5>
-                <p class="text-secondary">Roteadores modernos para você aproveitar toda a banda contratada.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="icon-circle mx-auto">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+                    <h5 class="fw-bold">Relatórios Gerenciais</h5>
+                    <p class="text-secondary">Dashboards completos para tomada de decisão estratégica.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="icon-circle mx-auto">
+                        <i class="bi bi-coin"></i>
+                    </div>
+                    <h5 class="fw-bold">Investimentos</h5>
+                    <p class="text-secondary">Orientação sobre melhores opções de investimento para seu perfil.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="icon-circle mx-auto">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    <h5 class="fw-bold">Segurança de Dados</h5>
+                    <p class="text-secondary">Suas informações protegidas com criptografia de ponta.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ======= PLANOS (cards com preços fictícios mas coerentes) ======= -->
-<section id="planos" class="py-5 bg-light">
+<!-- ======= SOLUÇÕES EM DESTAQUE ======= -->
+<section id="solucoes" class="py-5 bg-soft-green">
     <div class="container">
         <div class="text-center mb-5">
-            <span class="text-primary fw-semibold">ESCOLHA O SEU</span>
-            <h2 class="fw-bold">Planos de internet sob medida</h2>
-            <p class="text-secondary">Opções para todos os perfis, sempre com fibra até a sua casa.</p>
+            <span class="text-success fw-semibold">SOLUÇÕES</span>
+            <h2 class="fw-bold">Planos e <span class="border-bottom-gold">Serviços</span></h2>
+            <p class="text-secondary">Escolha a melhor opção para sua necessidade</p>
         </div>
         <div class="row g-4">
-            <!-- plano 1 -->
             <div class="col-lg-4">
-                <div class="card card-plan h-100 border-0 shadow-sm">
+                <div class="card card-hover border-0 shadow rounded-4 h-100">
                     <div class="card-body p-4">
-                        <i class="bi bi-wifi fs-1 text-primary"></i>
-                        <h4 class="fw-bold mt-3">Lar 200 Mega</h4>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Download 200 Mbps</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Upload 200 Mbps</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Wi-Fi incluso</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Suporte 24h</p>
-                        <h3 class="fw-bold mt-4">R$ 89,90 <span class="fs-6 fw-normal text-secondary">/mês</span></h3>
-                        <a href="#contato" class="btn btn-outline-primary w-100 mt-3">Contratar</a>
+                        <div class="text-center">
+                            <i class="bi bi-journal-bookmark-fill fs-1 text-success"></i>
+                            <h4 class="fw-bold mt-3">Básico</h4>
+                            <div class="price-badge my-3">A partir de</div>
+                            <h2 class="fw-bold text-success">R$ 97,90</h2>
+                            <p class="text-muted">/mês</p>
+                        </div>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Controle de caixa básico</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Até 100 lançamentos/mês</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Suporte por e-mail</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Relatórios mensais</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-outline-caixa w-100 mt-3">Contratar</a>
                     </div>
                 </div>
             </div>
-            <!-- plano 2 (destaque) -->
             <div class="col-lg-4">
-                <div class="card card-plan h-100 border-primary border-2 shadow">
+                <div class="card card-hover border-0 shadow rounded-4 h-100 border-top border-4 border-warning">
                     <div class="card-body p-4">
-                        <span class="badge bg-accent text-white mb-2" style="background-color: #fd7e14;">MAIS ESCOLHIDO</span>
-                        <i class="bi bi-wifi fs-1 text-primary"></i>
-                        <h4 class="fw-bold mt-3">Lar 400 Mega</h4>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Download 400 Mbps</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Upload 400 Mbps</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Wi-Fi 6 + Roteador</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Suporte prioritário</p>
-                        <h3 class="fw-bold mt-4">R$ 129,90 <span class="fs-6 fw-normal text-secondary">/mês</span></h3>
-                        <a href="#contato" class="btn btn-primary w-100 mt-3">Quero esse</a>
+                        <div class="text-center">
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-2">MAIS ESCOLHIDO</span>
+                            <i class="bi bi-star-fill fs-1 text-warning"></i>
+                            <h4 class="fw-bold mt-3">Profissional</h4>
+                            <div class="price-badge my-3">A partir de</div>
+                            <h2 class="fw-bold text-success">R$ 197,90</h2>
+                            <p class="text-muted">/mês</p>
+                        </div>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Controle de caixa avançado</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Lançamentos ilimitados</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Suporte prioritário 24h</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Dashboards personalizados</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Consultoria mensal</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-caixa w-100 mt-3">Contratar</a>
                     </div>
                 </div>
             </div>
-            <!-- plano 3 -->
             <div class="col-lg-4">
-                <div class="card card-plan h-100 border-0 shadow-sm">
+                <div class="card card-hover border-0 shadow rounded-4 h-100">
                     <div class="card-body p-4">
-                        <i class="bi bi-wifi fs-1 text-primary"></i>
-                        <h4 class="fw-bold mt-3">Lar 600 Mega</h4>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Download 600 Mbps</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Upload 600 Mbps</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Wi-Fi 6 + mesh</p>
-                        <p class="text-secondary"><i class="bi bi-check-circle-fill text-primary me-1"></i> Instalação grátis</p>
-                        <h3 class="fw-bold mt-4">R$ 169,90 <span class="fs-6 fw-normal text-secondary">/mês</span></h3>
-                        <a href="#contato" class="btn btn-outline-primary w-100 mt-3">Contratar</a>
+                        <div class="text-center">
+                            <i class="bi bi-building fs-1 text-success"></i>
+                            <h4 class="fw-bold mt-3">Empresarial</h4>
+                            <div class="price-badge my-3">Sob consulta</div>
+                            <h2 class="fw-bold text-success">Custom</h2>
+                            <p class="text-muted">/plano personalizado</p>
+                        </div>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Gestão completa empresarial</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Múltiplos usuários</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> API de integração</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Treinamento equipe</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-outline-caixa w-100 mt-3">Fale conosco</a>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="text-center text-secondary mt-5"><i class="bi bi-info-circle"></i> Todos os planos com instalação sem fidelidade. Sujeito a análise de viabilidade.</p>
     </div>
 </section>
 
-<!-- ======= SOBRE (com os dados da empresa, CNPJ etc) ======= -->
+<!-- ======= SOBRE A EMPRESA ======= -->
 <section id="sobre" class="py-5">
     <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-md-6">
-                <h2 class="fw-bold mb-4"><span class="border-accent-bottom">Sobre a Lar Internet</span></h2>
-                <p class="lead">Conectando famílias curitibanas desde 2011 com transparência e qualidade.</p>
-                <div class="contact-info mt-4">
-                    <p><i class="bi bi-building"></i> <strong>Razão Social:</strong> Lar Telecomunicacoes LTDA</p>
-                    <p><i class="bi bi-tag"></i> <strong>Nome Fantasia:</strong> Lar Internet</p>
-                    <p><i class="bi bi-qr-code-scan"></i> <strong>CNPJ:</strong> 13.363.506/0001-07</p>
-                    <p><i class="bi bi-calendar-check"></i> <strong>Data de abertura:</strong> 03/03/2011</p>
-                    <p><i class="bi bi-geo-alt"></i> <strong>Endereço:</strong> Rua Marcos Bertoldi, 443 - Campo de Santana, Curitiba - PR, 81490-530</p>
-                    <p><i class="bi bi-telephone"></i> <strong>Telefone fixo:</strong> (41) 3223-9308</p>
-                    <p><i class="bi bi-envelope"></i> <strong>E-mail:</strong> contato@larinternet.com.br</p>
-                </div>
-                <!-- badges de confiança -->
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark p-2 me-2"><i class="bi bi-check-circle-fill text-success"></i> Situação cadastral ativa</span>
-                    <span class="badge bg-light text-dark p-2"><i class="bi bi-shield-fill-check text-primary"></i> 12 anos de mercado</span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <!-- mapa / endereço ilustrado com card -->
-                <div class="card border-0 shadow-sm bg-dark-blue text-white">
-                    <div class="card-body p-4">
-                        <h5><i class="bi bi-pin-map-fill"></i> Área de cobertura</h5>
-                        <p>Atendemos todo o bairro Campo de Santana e regiões vizinhas de Curitiba. Consulte viabilidade.</p>
-                        <hr class="bg-white opacity-25">
-                        <p class="mb-0"><i class="bi bi-telephone-outbound"></i> Ligue agora: <strong>(41) 3223-9308</strong></p>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="bg-success bg-opacity-10 rounded-4 p-4">
+                    <i class="bi bi-building fs-1 text-success mb-3"></i>
+                    <h2 class="fw-bold mb-4">Sobre o <span class="text-success">Gerenciador Financeiro CAIXA</span></h2>
+                    <div class="contact-info">
+                        <p><i class="bi bi-briefcase-fill text-success me-2"></i> <strong>Razão Social:</strong> Gerenciador Financeiro CAIXA</p>
+                        <p><i class="bi bi-calendar-check text-success me-2"></i> <strong>Data de abertura:</strong> 19/03/2020</p>
+                        <p><i class="bi bi-geo-alt-fill text-success me-2"></i> <strong>Endereço:</strong> Avenida Marechal Emilio Rodrigues Ribas Junior, 31 - Vila Santos Dumont, Nazário - GO, 76180-000</p>
+                        <p><i class="bi bi-telephone-fill text-success me-2"></i> <strong>Telefone/WhatsApp:</strong> (64) 99989-6161</p>
+                        <p><i class="bi bi-envelope-fill text-success me-2"></i> <strong>E-mail:</strong> contato@gerenciadorcaixa.com.br</p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="badge bg-success text-white p-2 me-2"><i class="bi bi-check-circle"></i> Situação Cadastral: ATIVA</span>
+                        <span class="badge bg-warning text-dark p-2"><i class="bi bi-trophy"></i> 5 anos de excelência</span>
                     </div>
                 </div>
-                <!-- ícone de rota (apenas estético) -->
-                <div class="text-center mt-4">
-                    <i class="bi bi-houses-fill text-primary" style="font-size: 4rem; opacity: 0.6;"></i>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="card-body p-4 bg-primary-custom text-white">
+                        <h4 class="fw-bold"><i class="bi bi-pin-map-fill"></i> Nossa Localização</h4>
+                        <p class="mt-3">Estamos localizados em Nazário - GO, atendemos toda a região com excelência e compromisso.</p>
+                        <hr class="bg-white opacity-25">
+                        <div class="d-flex align-items-center mt-3">
+                            <i class="bi bi-whatsapp fs-3 me-3"></i>
+                            <div>
+                                <strong>Atendimento rápido</strong><br>
+                                <span>Segunda a Sexta, 8h às 18h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento -->
+                <div class="testimonial-card mt-4">
+                    <i class="bi bi-quote fs-1 text-success opacity-50"></i>
+                    <p class="mt-2 fst-italic">"O Gerenciador Financeiro CAIXA transformou a gestão da minha empresa. Recomendo demais!"</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="bi bi-person-circle fs-3 me-2"></i>
+                        <div>
+                            <strong>João Silva</strong><br>
+                            <small class="text-muted">Empresário</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ======= CONTATO / INFORMAÇÕES ADICIONAIS ======= -->
-<section id="contato" class="py-5 bg-light">
+<!-- ======= CONTATO ======= -->
+<section id="contato" class="py-5 bg-soft-green">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 mx-auto text-center">
-                <h2 class="fw-bold">Fale com a gente</h2>
-                <p class="text-secondary">Tire dúvidas, solicite orçamento ou suporte técnico.</p>
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold">Entre em <span class="border-bottom-gold">Contato</span></h2>
+                <p class="text-secondary mb-5">Estamos prontos para atender você. Escolha o melhor canal:</p>
             </div>
         </div>
-        <div class="row g-4 mt-3">
+        <div class="row g-4">
             <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100 text-center p-4">
-                    <i class="bi bi-whatsapp fs-1 text-primary"></i>
-                    <h5 class="mt-2">WhatsApp</h5>
-                    <p class="text-secondary">(41) 3223-9308</p>
-                    <a href="#" class="stretched-link" onclick="alert('Número para contato: (41) 3223-9308')">Enviar mensagem</a>
+                <div class="card border-0 shadow text-center p-4 h-100 card-hover">
+                    <i class="bi bi-whatsapp fs-1 text-success"></i>
+                    <h5 class="mt-3 fw-bold">WhatsApp</h5>
+                    <p class="text-secondary">(64) 99989-6161</p>
+                    <a href="#" class="btn btn-sm btn-outline-success" onclick="alert('WhatsApp: (64) 99989-6161')">Enviar mensagem</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100 text-center p-4">
-                    <i class="bi bi-telephone fs-1 text-primary"></i>
-                    <h5 class="mt-2">Telefone Fixo</h5>
-                    <p class="text-secondary">(41) 3223-9308</p>
-                    <p class="text-muted small">Seg a sex, 8h às 18h</p>
+                <div class="card border-0 shadow text-center p-4 h-100 card-hover">
+                    <i class="bi bi-telephone-fill fs-1 text-success"></i>
+                    <h5 class="mt-3 fw-bold">Telefone</h5>
+                    <p class="text-secondary">(64) 99989-6161</p>
+                    <p class="text-muted small">Seg-Sex: 8h às 18h</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100 text-center p-4">
-                    <i class="bi bi-envelope fs-1 text-primary"></i>
-                    <h5 class="mt-2">E-mail</h5>
-                    <p class="text-secondary">contato@larinternet.com.br</p>
+                <div class="card border-0 shadow text-center p-4 h-100 card-hover">
+                    <i class="bi bi-envelope-fill fs-1 text-success"></i>
+                    <h5 class="mt-3 fw-bold">E-mail</h5>
+                    <p class="text-secondary">contato@gerenciadorcaixa.com.br</p>
+                    <p class="text-muted small">Respondemos em até 24h</p>
                 </div>
             </div>
         </div>
-
-        <!-- mais informações CNPJ rápido (consulta) -->
+        
+        <!-- Informações adicionais -->
         <div class="row mt-5">
             <div class="col-12">
-                <div class="bg-white p-4 rounded-3 border">
-                    <p class="mb-2"><i class="bi bi-database"></i> <strong>Dados cadastrais:</strong> LAR TELECOMUNICACOES LTDA | CNPJ 13.363.506/0001-07 | Situação: ATIVA (desde 03/03/2011)</p>
-                    <p class="mb-0 text-secondary small">* Endereço comercial: Rua Marcos Bertoldi, 443 - Campo de Santana, Curitiba. CEP 81490-530</p>
+                <div class="bg-white rounded-4 p-4 shadow-sm">
+                    <h5 class="fw-bold text-success"><i class="bi bi-info-circle"></i> Informações Corporativas</h5>
+                    <p class="mb-2"><strong>Gerenciador Financeiro CAIXA</strong> | Fundada em 19/03/2020</p>
+                    <p class="mb-0 text-muted small">Avenida Marechal Emilio Rodrigues Ribas Junior, 31 - Vila Santos Dumont, Nazário - GO, CEP 76180-000 | CNPJ: em processo de atualização</p>
+                    <p class="mt-2 text-muted small">*Situação Cadastral: ATIVA desde 19/03/2020</p>
                 </div>
             </div>
         </div>
@@ -335,45 +475,48 @@
 </section>
 
 <!-- ======= RODAPÉ ======= -->
-<footer class="bg-dark-blue text-white pt-5 pb-4">
+<footer class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
-                <h4 class="fw-bold"><i class="bi bi-wifi"></i> Lar Internet</h4>
-                <p class="text-secondary">Fibra ótica com o carinho que você merece. Conectamos o Campo de Santana e região com qualidade e respeito.</p>
-                <i class="bi bi-facebook me-3 fs-5"></i>
-                <i class="bi bi-instagram me-3 fs-5"></i>
-                <i class="bi bi-whatsapp fs-5"></i>
+            <div class="col-md-4 mb-4">
+                <h4 class="fw-bold"><i class="bi bi-cash-stack"></i> Gerenciador Financeiro CAIXA</h4>
+                <p class="text-white-50">Soluções inteligentes para controle financeiro. Confiança e resultados desde 2020.</p>
+                <div class="mt-3">
+                    <a href="#" class="social-icon me-2 d-inline-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon me-2 d-inline-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon me-2 d-inline-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="col-md-3 offset-md-1">
-                <h5>Links rápidos</h5>
+            <div class="col-md-2 mb-4">
+                <h5>Links Rápidos</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#home" class="text-secondary">Início</a></li>
-                    <li><a href="#planos" class="text-secondary">Planos</a></li>
-                    <li><a href="#sobre" class="text-secondary">Sobre</a></li>
-                    <li><a href="#contato" class="text-secondary">Contato</a></li>
+                    <li><a href="#home" class="text-white-50 text-decoration-none">Início</a></li>
+                    <li><a href="#servicos" class="text-white-50 text-decoration-none">Serviços</a></li>
+                    <li><a href="#solucoes" class="text-white-50 text-decoration-none">Planos</a></li>
+                    <li><a href="#sobre" class="text-white-50 text-decoration-none">Sobre</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <h5>Atendimento</h5>
-                <p class="text-secondary mb-1"><i class="bi bi-telephone"></i> (41) 3223-9308</p>
-                <p class="text-secondary"><i class="bi bi-envelope"></i> contato@larinternet.com.br</p>
-                <small>® 2025 Lar Telecomunicacoes LTDA. Todos os direitos reservados.</small>
+            <div class="col-md-3 mb-4">
+                <h5>Contato</h5>
+                <p class="text-white-50 mb-1"><i class="bi bi-telephone"></i> (64) 99989-6161</p>
+                <p class="text-white-50"><i class="bi bi-envelope"></i> contato@gerenciadorcaixa.com.br</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>Endereço</h5>
+                <p class="text-white-50 small">Av. Marechal Emilio Rodrigues Ribas Junior, 31<br>Vila Santos Dumont, Nazário - GO<br>CEP: 76180-000</p>
             </div>
         </div>
-        <hr class="bg-secondary">
-        <div class="row">
-            <div class="col-12 text-center text-secondary">
-                <p class="small">Rua Marcos Bertoldi, 443 - Campo de Santana, Curitiba - PR - CEP 81490-530 | CNPJ 13.363.506/0001-07</p>
-            </div>
+        <hr class="bg-white opacity-25">
+        <div class="text-center text-white-50 small">
+            <p class="mb-0">© 2025 Gerenciador Financeiro CAIXA - Todos os direitos reservados | Situação Cadastral: ATIVA desde 19/03/2020</p>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap JS (necessário para o menu colapsável e interações) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- (opcional) script para suavizar scroll em links internos -->
 <script>
+    // Scroll suave para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
